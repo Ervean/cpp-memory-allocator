@@ -5,6 +5,8 @@ typedef char ALIGN[16];
 
 namespace Memory
 {
+    #ifndef HEADER_T
+    #define HEADER_T
     // header is guarenteed to be aligned to 16 bytes
     // union is the larger size of its members
     // therefor the union guantees the end of the header is memory aligned
@@ -17,9 +19,10 @@ namespace Memory
         ALIGN stub;  
     };
     typedef union header header_t;
+    #endif
 
-    #ifndef MEMORYALLOCATOR_H
-    #define MEMORYALLOCATOR_H
+    #ifndef MEMORY_ALLOCATOR_H
+    #define MEMORY_ALLOCATOR_H
     class MemoryAllocator
     {
     public:
@@ -32,7 +35,6 @@ namespace Memory
         header_t *get_free_block(size_t size);
         header_t *head;
         header_t *tail;
-        int x;
     };
     #endif
 

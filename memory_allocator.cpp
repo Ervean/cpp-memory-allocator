@@ -1,8 +1,8 @@
 #include "memory_allocator.h"
-#include <iostream>
 #include <pthread.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <iostream>
 
 using namespace Memory;
 
